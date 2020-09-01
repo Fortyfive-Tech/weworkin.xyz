@@ -1,0 +1,38 @@
+type Mutation {
+  createPublicProfile (
+    profileDetails: CreatePublicProfileInput!
+    roles: [PublicRole!]!
+    location: PublicLocation
+  ): CreatePublicProfileOutput
+}
+
+
+
+
+input CreatePublicProfileInput {
+  description : String!
+  first_name : String!
+  last_name : String!
+  email : String!
+  linkedin_url : String!
+  position_title : String!
+  resume_url : String!
+  website_url : String!
+  open_to_relocation : Boolean
+  open_to_remote_work : Boolean
+}
+
+input PublicRole {
+  name : String!
+}
+
+input PublicLocation {
+  country : String!
+  city : String!
+}
+
+type CreatePublicProfileOutput {
+  first_name : String!
+  last_name : String!
+}
+

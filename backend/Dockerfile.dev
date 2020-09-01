@@ -1,0 +1,14 @@
+FROM node:14.8.0-alpine3.12
+
+# Setting working directory. All the path will be relative to WORKDIR
+WORKDIR /usr/src/app
+
+# Installing dependencies
+COPY package*.json ./
+RUN yarn --network-timeout 1000000
+
+# Copying source files
+COPY . .
+
+# Running the app
+CMD [ "yarn", "run", "dev"]

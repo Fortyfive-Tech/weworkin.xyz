@@ -1,0 +1,217 @@
+/* stylelint-disable docusaurus/copyright-header */
+
+.section {
+  background:var(--ifm-color-primary);
+  position:relative;
+}
+
+.intro {
+  display:flex;
+  justify-content: center;
+  align-content: flex-start;
+  align-items: flex-start;
+  flex-direction:column;
+  min-height:calc(100vh - 120px);
+  padding: 110px 0;
+}
+
+.title {
+  font-size: 75px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.07;
+  letter-spacing: -0.54px;
+}
+
+.desc {
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.33;
+  letter-spacing: -0.54px;
+  max-width: 100%;
+  margin-bottom:60px;
+}
+
+.background {
+  background-image: url('/img/background-squares.svg');
+  background-position:right bottom;
+  background-repeat: no-repeat;
+  background-size:contain;
+  position:absolute;
+  height:100%;
+  width:50%;
+  right:0;
+  bottom:0;
+}
+
+
+/* We work in aviation */
+.portfolio {
+  padding-top:70px;
+  
+}
+
+.featuredProject {
+  flex: 0 1 50%;
+  padding-right:60px;
+}
+
+.featuredProject > div {
+  position:relative;
+  padding:0 60px 120px 0;
+}
+
+.featuredProject > div::before {
+  content:'';
+  position:absolute;
+  bottom:0;
+  right:0;
+  width:80%;
+  height:80%;
+  border-radius: 10px;
+  background-color: rgba(190, 233, 255, 0.15);
+}
+
+.featuredProject > div img {
+  position:relative;
+  display:block;
+}
+
+.featuredProjectDetails {
+  flex:0 1 50%;
+}
+
+.featuredProjectDetails h2 {
+  font-size: 40px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.5px;
+}
+
+.featuredProjectDetails p {
+  font-size: 24px;
+  line-height: 1.42;
+  letter-spacing: -0.5px;
+  width:80%;
+}
+
+.featuredProjectDetails span {
+  font-size: 16px;
+  color:white;
+  letter-spacing: -0.33px;
+}
+
+
+
+.showcaseList {
+  padding:30px 0 10px;
+}
+
+.showcaseList > a {
+  display:block;
+  padding:15px;
+  border-radius: 6px;
+  background:white;
+  margin-right:10px;
+  flex: 1 1 auto;
+  text-decoration:none;
+  margin-bottom:20px;
+  font-size: 10.7px;
+  color:#717171;
+  letter-spacing: -0.22px;
+  text-align: center;
+  display:block;
+}
+
+.showcaseList > a img {
+  max-height: 35px;
+  display:block;
+  margin:0 auto;
+  margin-bottom:5px;
+  width:auto;
+}
+
+
+/* As a service section */
+.services {
+  padding:100px 0 200px;
+}
+
+.serviceDetails {
+  flex: 0 1 50%;
+  padding-right:60px;
+  padding-bottom:60px;
+}
+
+.serviceDetails h3 {
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: -0.5px;
+}
+
+.serviceDetails p {
+  font-size: 24px;
+  line-height: 1.42;
+  letter-spacing: -0.5px;
+}
+
+.serviceList {
+  flex:0 1 50%;
+}
+
+.serviceList ol {
+  padding:0;
+  margin:0;
+  list-style-type: none;
+}
+
+.serviceList ol li {
+  margin-bottom:70px;
+  display:flex;
+  align-items:center;
+}
+
+.serviceList ol li div {
+  width:70px;
+  height:70px;
+  flex:0 0 auto;
+  margin-right:20px;
+}
+
+.serviceList ol li div img {
+  width:100%;
+  display:block;
+  height:auto;
+}
+
+.serviceList ol li span {
+  font-size: 24px;
+  line-height: 1.42;
+  letter-spacing: -0.5px;
+}
+
+
+@media only screen and (min-width: 960px) {
+  .desc {
+    max-width: 60%;
+  }
+
+  .portfolio {
+    display:flex;
+  }
+
+  .showcaseList {
+    display:flex;
+  }
+
+  .showcaseList > a {
+    margin-bottom:0;
+  }
+
+  .services {
+    display:flex;
+  }
+}

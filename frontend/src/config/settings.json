@@ -1,0 +1,27 @@
+{
+    "companyName" : "WeWorkIn XYZ",
+    "headline" : "A community of professionals <br /><em>looking for their next opportunity</em>.",
+    "description" : "We helped move industries before the global pandemic and we'll do it again.",
+    "logoPath" : "/wwi-logo.svg",
+    "contactEmail": "hello@company.com",
+    "footerMenuItems": [
+        {
+            "label": "Data Privacy",
+            "path": "/privacy"
+        },
+        {
+            "label": "About us",
+            "path": "/about-us"
+        },
+        {
+            "label": "External Link",
+            "path": "https://fortyfive.tech",
+            "external": true
+        }
+    ],
+
+    "register" : {
+        "title" : "Register your profile",
+        "description" : "When you register, your profile is being manually reviewed and published within a few hours."
+    }
+}

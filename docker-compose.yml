@@ -1,0 +1,47 @@
+version: '3.6'
+services:
+  postgres:
+    image: postgres:12
+    restart: always
+    volumes:
+    - db_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+  graphql-engine:
+    image: hasura/graphql-engine:v1.3.0
+    ports:
+    - "8080:8080"
+    depends_on:
+    - "postgres"
+    restart: always
+    environment:
+      HASURA_GRAPHQL_DATABASE_URL: postgres://postgres:${POSTGRES_PASSWORD}@postgres:5432/postgres
+      ## enable the console served by server
+      HASURA_GRAPHQL_ENABLE_CONSOLE: "true" # set to "false" to disable console
+      ## enable debugging mode. It is recommended to disable this in production
+      HASURA_GRAPHQL_DEV_MODE: "true"
+      HASURA_GRAPHQL_ENABLED_LOG_TYPES: startup, http-log, webhook-log, websocket-log, query-log
+      ## uncomment next line to set an admin secret
+      HASURA_GRAPHQL_ADMIN_SECRET: "${HASURA_ADMIN_SECRET}"
+
+      HASURA_GRAPHQL_UNAUTHORIZED_ROLE: anonymous
+      HASURA_ACTION_BASE_URL: http://backend:3000
+      HASURA_WEBHOOK_NOTIFY_URL: http://backend:3000/profile/notify
+      HASURA_WEBHOOK_PUBLISH_URL: http://backend:3000/profile/publish
+  backend:
+    container_name: backend_dev
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.dev
+    environment:
+      - NODE_ENV=development
+
+      # backend is not public, always make the requests internally
+      - HASURA_ENDPOINT=http://graphql-engine:8080/v1/graphql
+      - HASURA_ADMIN_SECRET=${HASURA_ADMIN_SECRET}
+      - SLACK_WEBHOOK_URL=${SLACK_WEBHOOK_URL}
+      - PORT=${PORT}
+    volumes:
+      - ./backend:/usr/src/app
+volumes:
+  db_data:

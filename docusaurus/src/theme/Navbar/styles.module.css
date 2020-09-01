@@ -1,0 +1,39 @@
+.wrapper {
+  width:100%;
+  padding-top:60px;
+  height:120px;
+  background: var(--ifm-color-primary);
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: -0.44px;
+  color:white;
+  display:block;
+}
+
+.logo a {
+  color:white;
+}
+
+.inner {
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu {
+  padding:0;
+  margin:0;
+  list-style-type: none;
+  display:flex;
+}
+
+.menu li {
+  margin-left:30px;
+}
+
+.menu li a {
+  color:white;
+}

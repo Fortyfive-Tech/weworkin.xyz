@@ -1,0 +1,111 @@
+- table:
+    schema: public
+    name: locations
+  array_relationships:
+  - name: profiles
+    using:
+      foreign_key_constraint_on:
+        column: location_id
+        table:
+          schema: public
+          name: profiles
+  select_permissions:
+  - role: anonymous
+    permission:
+      columns:
+      - city
+      - country
+      - id
+      filter:
+        is_public:
+          _eq: true
+- table:
+    schema: public
+    name: profiles
+  object_relationships:
+  - name: location
+    using:
+      foreign_key_constraint_on: location_id
+  array_relationships:
+  - name: profiles_roles
+    using:
+      foreign_key_constraint_on:
+        column: profile_id
+        table:
+          schema: public
+          name: profiles_roles
+  select_permissions:
+  - role: anonymous
+    permission:
+      columns:
+      - description
+      - first_name
+      - id
+      - last_name
+      - linkedin_url
+      - location_id
+      - open_to_relocation
+      - open_to_remote_work
+      - position_title
+      - resume_url
+      - website_url
+      filter:
+        is_public:
+          _eq: true
+  event_triggers:
+  - name: PublishProfile
+    definition:
+      enable_manual: true
+    retry_conf:
+      num_retries: 0
+      interval_sec: 10
+      timeout_sec: 60
+    webhook_from_env: HASURA_WEBHOOK_PUBLISH_URL
+  - name: SlackNotification
+    definition:
+      enable_manual: false
+      insert:
+        columns: '*'
+    retry_conf:
+      num_retries: 0
+      interval_sec: 10
+      timeout_sec: 60
+    webhook_from_env: HASURA_WEBHOOK_NOTIFY_URL
+- table:
+    schema: public
+    name: profiles_roles
+  object_relationships:
+  - name: profile
+    using:
+      foreign_key_constraint_on: profile_id
+  - name: role
+    using:
+      foreign_key_constraint_on: role_id
+  select_permissions:
+  - role: anonymous
+    permission:
+      columns:
+      - profile_id
+      - role_id
+      filter: {}
+- table:
+    schema: public
+    name: roles
+  array_relationships:
+  - name: roles_profiles
+    using:
+      foreign_key_constraint_on:
+        column: role_id
+        table:
+          schema: public
+          name: profiles_roles
+  select_permissions:
+  - role: anonymous
+    permission:
+      columns:
+      - id
+      - name
+      - slug
+      filter:
+        is_public:
+          _eq: true
