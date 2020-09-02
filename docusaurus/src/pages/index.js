@@ -57,11 +57,10 @@ const Home = () => {
                     
                       <h1 className={styles.title}><b>Open Source</b> <br/> Talent Board Software</h1>
                       <p className={styles.desc}>Set up your own talent board to support people in finding their next opportunity.</p>
-                      <Link
-                        className="button button--lg"
-                        to={useBaseUrl('docs/')}>
+                      <a href="https://github.com/Fortyfive-Tech/weworkin.xyz" target="_blank" rel="noopener"
+                        className="button button--lg">
                         Get it now &rarr;
-                      </Link>
+                      </a>
                   </div>
               </div>
             </div>
