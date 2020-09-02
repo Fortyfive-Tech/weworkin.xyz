@@ -7,39 +7,7 @@ module.exports = {
   favicon: 'img/favicon.png',
   organizationName: 'Fortyfive-Tech', // Usually your GitHub org/user name.
   projectName: 'WeWorkIn.xyz', // Usually your repo name.
-  themeConfig: {
-    footer: {
-      links: [
-        {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Getting Started',
-              to: 'docs/',
-            },
-            {
-              label: 'How it works',
-              to: 'docs/how-it-works/',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Fortyfive Tech',
-              href: 'https://fortyfive.tech',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
-            },
-          ],
-        },
-      ],
-      copyright: `Copyright © ${new Date().getFullYear()} Fortyfive Tech. Built with Docusaurus.`,
-    },
-  },
+  themeConfig: {},
   presets: [
     [
       '@docusaurus/preset-classic',
