@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'WeWorkIn.xyz',
+  title: 'WeWorkIn.xyz | Open Source Talent Board Software',
   tagline: 'Open source talent board software',
   url: 'https://weworkin.xyz',
   baseUrl: '/',
@@ -24,7 +24,7 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
+            'https://github.com/Fortyfive-Tech/weworkin.xyz/tree/master/docusaurus',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
