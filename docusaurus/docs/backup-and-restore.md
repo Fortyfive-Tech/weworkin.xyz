@@ -11,13 +11,13 @@ PostgreSQL is running in a Docker container, so it is easy to create a database 
 
 This command will list the running containers. For running a command inside a Docker container, the container ID will be needed.
 
-2. `docker exec -t container_id_here pg_dumpall -c -U postgres > backup.sql`
+2. `docker exec -t container_id_here pg_dump --clean -U postgres postgres > backup.sql`
 
 The `backup.sql` is now available for copying in some safe place, or uploading it to S3, etc.
 
 ## Restore DB dump
 
-`cat backup.sql | docker exec -i container_id_here psql -U postgres`
+`cat backup.sql | docker exec -i container_id_here psql -U postgres -d postgres`
 
 ## Hasura metadata and migrations
 
