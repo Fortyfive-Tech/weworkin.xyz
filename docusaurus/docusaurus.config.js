@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'WeWorkIn.xyz | Open Source Talent Board Software',
+  title: 'WeWorkIn.xyz',
   tagline: 'Open source talent board software',
   url: 'https://weworkin.xyz',
   baseUrl: '/',

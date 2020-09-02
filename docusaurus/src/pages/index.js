@@ -44,7 +44,7 @@ const Home = () => {
   const {siteConfig = {}} = context
 
   return <Layout
-        title={`${siteConfig.title}`}
+        title="Open Source Talent Board Software"
         description="Set up your own talent board to support people in their quest to find their next opportunity.">
 
         <main>
