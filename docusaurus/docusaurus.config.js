@@ -7,7 +7,13 @@ module.exports = {
   favicon: 'img/favicon.png',
   organizationName: 'Fortyfive-Tech', // Usually your GitHub org/user name.
   projectName: 'WeWorkIn.xyz', // Usually your repo name.
-  themeConfig: {},
+  themeConfig: {
+    colorMode: {
+      defaultMode: 'light',
+      disableSwitch: true,
+      respectPrefersColorScheme: false
+    }
+  },
   presets: [
     [
       '@docusaurus/preset-classic',
