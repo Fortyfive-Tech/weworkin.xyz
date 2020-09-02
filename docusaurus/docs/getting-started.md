@@ -12,7 +12,7 @@ sidebar_label: Getting Started
 
 - `docker-compose -f docker-compose.prod.yml up -d`
 
-Hasura Console is now running at http://localhost:8080, exposing the GraphQL endpoint at http://localhost:8080/v1/graphql.
+Hasura Console is now running at http://localhost:8081, exposing the GraphQL endpoint at http://localhost:8081/v1/graphql.
 
 #### 2. Apply migrations and metadata
 
@@ -46,7 +46,7 @@ server {
 	server_name hasura.yourdomain.com www.hasura.yourdomain.com;
 
     location / {
-        proxy_pass http://localhost:8080/;
+        proxy_pass http://localhost:8081/;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection "upgrade";

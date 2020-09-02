@@ -10,7 +10,7 @@ Open-source talent board, powered by [Hasura GraphQL Engine](https://hasura.io/)
 
 - `docker-compose -f docker-compose.prod.yml up -d`
 
-Hasura Console is now running at http://localhost:8080, exposing the GraphQL endpoint at http://localhost:8080/v1/graphql.
+Hasura Console is now running at http://localhost:8081, exposing the GraphQL endpoint at http://localhost:8081/v1/graphql.
 
 #### 2. Apply migrations and metadata
 
@@ -27,7 +27,7 @@ Change the values in the `/frontend/.env` file, if needed. Or create `.env.local
 
 The client is a simple static application, bootstraped with [create-react-app](https://create-react-app.dev/). Locally, for a quick preview, the application can be served with `cd build && serve`. [Serve](https://www.npmjs.com/package/serve) must be installed first (`yarn global add serve`). 
 
-Please read the [Making it yours](/docs/making-it-yours) section, for additional customization options.
+Please read the [Making it yours](https://weworkin.xyz/docs/making-it-yours) section, for additional customization options.
 
 
 ## Running in production
@@ -44,7 +44,7 @@ server {
 	server_name hasura.yourdomain.com www.hasura.yourdomain.com;
 
     location / {
-        proxy_pass http://localhost:8080/;
+        proxy_pass http://localhost:8081/;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection "upgrade";
