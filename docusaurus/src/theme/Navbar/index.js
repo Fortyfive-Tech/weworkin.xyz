@@ -17,7 +17,7 @@ const Navbar = () => {
             <Link to="/docs">Docs</Link>
           </li>
           <li>
-            <a href="https://github.com/Fortyfive-Tech/weworkin.xyz-temp" rel="noopener" target="_blank">GitHub</a>
+            <a href="https://github.com/Fortyfive-Tech/weworkin.xyz" rel="noopener" target="_blank">GitHub</a>
           </li>
         </ul>
 
