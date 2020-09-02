@@ -10,7 +10,7 @@ services:
   graphql-engine:
     image: hasura/graphql-engine:v1.3.0
     ports:
-    - "8080:8080"
+    - "${HASURA_PORT}:8080"
     depends_on:
     - "postgres"
     restart: always
@@ -25,9 +25,9 @@ services:
       HASURA_GRAPHQL_ADMIN_SECRET: "${HASURA_ADMIN_SECRET}"
 
       HASURA_GRAPHQL_UNAUTHORIZED_ROLE: anonymous
-      HASURA_ACTION_BASE_URL: http://backend:3000
-      HASURA_WEBHOOK_NOTIFY_URL: http://backend:3000/profile/notify
-      HASURA_WEBHOOK_PUBLISH_URL: http://backend:3000/profile/publish
+      HASURA_ACTION_BASE_URL: http://backend:${BACKEND_INTERNAL_PORT}
+      HASURA_WEBHOOK_NOTIFY_URL: http://backend:${BACKEND_INTERNAL_PORT}/profile/notify
+      HASURA_WEBHOOK_PUBLISH_URL: http://backend:${BACKEND_INTERNAL_PORT}/profile/publish
   backend:
     build:
         context: ./backend
@@ -40,6 +40,6 @@ services:
         - HASURA_ENDPOINT=http://graphql-engine:8080/v1/graphql
         - HASURA_ADMIN_SECRET=${HASURA_ADMIN_SECRET}
         - SLACK_WEBHOOK_URL=${SLACK_WEBHOOK_URL}
-        - PORT=${PORT}
+        - PORT=${BACKEND_INTERNAL_PORT}
 volumes:
   db_data:
