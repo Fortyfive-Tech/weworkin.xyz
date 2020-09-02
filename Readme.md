@@ -15,14 +15,15 @@ Hasura Console is now running at http://localhost:8080, exposing the GraphQL end
 #### 2. Apply migrations and metadata
 
 - Install [Hasura CLI](https://hasura.io/docs/1.0/graphql/manual/hasura-cli/install-hasura-cli.html#install-hasura-cli)
-- `cd hasura`
-- fill in the endpoint and admin_secret in the `config.yml` file
-- `hasura migrate apply`
-- `hasura metadata apply`
+- Run `hasura-init.sh`. It is a small helper script that handles migrations initial setup. After this initial setup, everything related to migrations and metadata will be handled in the `hasura` directory.
 
 #### 3. Build the frontend
 
-- `cd frontend && yarn install && yarn build`
+- `cd frontend`
+
+Change the values in the `/frontend/.env` file, if needed. Or create `.env.local` file to overwrite.
+
+- `yarn install && yarn build`
 
 The client is a simple static application, bootstraped with [create-react-app](https://create-react-app.dev/). Locally, for a quick preview, the application can be served with `cd build && serve`. [Serve](https://www.npmjs.com/package/serve) must be installed first (`yarn global add serve`). 
 
