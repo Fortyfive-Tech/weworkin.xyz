@@ -104,10 +104,20 @@
   letter-spacing: -0.33px;
 }
 
+.featuredProjectDetails h3 {
+  font-size: 30px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.5px;
+  margin-top: 20px;
+}
+
 
 
 .showcaseList {
-  padding:30px 0 10px;
+  padding:0 0 10px;
 }
 
 .showcaseList > a {
@@ -146,8 +156,14 @@
   padding-bottom:60px;
 }
 
-.serviceDetails h3 {
+.serviceDetails h2 {
   font-size: 40px;
+  font-weight: bold;
+  letter-spacing: -0.5px;
+}
+
+.serviceDetails h3 {
+  font-size: 30px;
   font-weight: bold;
   letter-spacing: -0.5px;
 }
@@ -169,7 +185,7 @@
 }
 
 .serviceList ol li {
-  margin-bottom:70px;
+  margin-bottom:30px;
   display:flex;
   align-items:center;
 }
@@ -193,6 +209,11 @@
   letter-spacing: -0.5px;
 }
 
+.serviceList h3 {
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: -0.5px;
+}
 
 @media only screen and (min-width: 960px) {
   .desc {

@@ -55,12 +55,12 @@ const Home = () => {
               <div className="container" style={{position:'relative'}}>
                   <div className={styles.intro}>
                     
-                      <h1 className={styles.title}><b>Open source</b> <br/> talent board software</h1>
-                      <p className={styles.desc}>Set up your own talent board to support people in their quest to find their next opportunity.</p>
+                      <h1 className={styles.title}><b>Open Source</b> <br/> Talent Board Software</h1>
+                      <p className={styles.desc}>Set up your own talent board to support people in finding their next opportunity.</p>
                       <Link
                         className="button button--lg"
                         to={useBaseUrl('docs/')}>
-                        Get it now
+                        Get it now &rarr;
                       </Link>
                   </div>
               </div>
@@ -77,14 +77,14 @@ const Home = () => {
                     </div>
 
                     <div className={styles.featuredProjectDetails}>
-                      <h2>WeWorkInAviation</h2>
-                      <p>Talent board for aviation professionals looking for their next opportunity. </p>
+                      <h2>See it in action</h2>
+                      <p>WeWorkInAviation.com is a talent board for aviation professionals. </p>
                       <Link className="button button--lg"
                         href="https://weworkinaviation.com">
-                        View Site
+                        View site &rarr;
                       </Link>
+                      <h3>Sites that inspired us</h3>
                       <ShowcaseList data={showcaseData}/>
-                      <span>Similar Talent Boards that inspired us. </span>
                     </div>
                   </div>
                 </div>
@@ -95,44 +95,39 @@ const Home = () => {
               <div className="container">
                 <div className={styles.services}>
                   <div className={styles.serviceDetails}>
-                    <h3>Talent board as a service</h3>
-                    <p>Do you want to operate a talent board but don't know how to set it up? </p>
-                    <p>Get in touch at hello@fortyfive.tech and let us know who you are and what type of talent board you're looking for.</p>
+                    <h2>Talent Board-as-a-service</h2>
+                    <p>We will customise, launch and host your talent board for a one-time fee of <strong>€999</strong>.</p>
+                    <p>Let us know who you are and what you're looking to do.</p>
                     <Link className="button button--lg"
                         href="mailto:hello@fortyfive.tech">
-                        Get it Now for €999
+                        Email us at hello@fortyfive.tech &rarr;
                     </Link>
                   </div>
 
                   <div className={styles.serviceList}>
+                    <h3>What's included</h3>
                     <ol>
                       <li>
                         <div>
                           <img src={useBaseUrl('img/branding.svg')}/>
                         </div>
-                        <span>1. Apply your custom branding and copy</span>
-                      </li>
-
-                      <li>
-                        <div>
-                          <img src={useBaseUrl('img/cloud.svg')}/>
-                        </div>
-                        <span>2. Configure cloud solution</span>
+                        <span>Your custom branding and copy</span>
                       </li>
 
                       <li>
                         <div>
                           <img src={useBaseUrl('img/testing.svg')}/>
                         </div>
-                        <span>3. Testing and training</span>
+                        <span>Training</span>
                       </li>
 
                       <li>
                         <div>
                           <img src={useBaseUrl('img/maintenance.svg')}/>
                         </div>
-                        <span>4. Hosting, maintenance and support for 6 months</span>
+                        <span>Cloud hosting and support for <strong>1 year</strong> <sup>*</sup></span>
                       </li>
+                      <li>* Starting month 13, hosting and support cost is $20/month. If you prefer to host it elsewhere, we'll help you migrate.</li>
                     </ol>
                   </div>
                 </div>

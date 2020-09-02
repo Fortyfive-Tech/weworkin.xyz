@@ -4,7 +4,7 @@ module.exports = {
   url: 'https://weworkin.xyz',
   baseUrl: '/',
   onBrokenLinks: 'throw',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.png',
   organizationName: 'Fortyfive-Tech', // Usually your GitHub org/user name.
   projectName: 'WeWorkIn.xyz', // Usually your repo name.
   themeConfig: {
