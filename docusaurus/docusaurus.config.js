@@ -9,7 +9,7 @@ module.exports = {
   projectName: 'WeWorkIn.xyz', // Usually your repo name.
   themeConfig: {
     colorMode: {
-      defaultMode: 'light',
+      defaultMode: 'dark',
       disableSwitch: true,
       respectPrefersColorScheme: false
     }
