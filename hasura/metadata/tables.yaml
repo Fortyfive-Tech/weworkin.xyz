@@ -47,6 +47,7 @@
       - open_to_relocation
       - open_to_remote_work
       - position_title
+      - created_at
       - resume_url
       - website_url
       filter:
