@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom'
 import settings from '../config/settings'
 
 const Footer = () => {
+    const currentYear = new Date().getFullYear()
+
     return <Wrapper>
         <Inner>
             <div>
@@ -13,7 +15,7 @@ const Footer = () => {
                 in <a target="_blank" href="https://goo.gl/maps/ZTEUrCvDWmgqMkv77">Cluj-Napoca</a>, 
                 by <strong><a target="_blank" href="https://fortyfive.tech">Fortyfive</a></strong>
 
-                <Copyright>Copyright &copy; 2020 {settings.companyName}</Copyright>
+                <Copyright>Copyright &copy; {currentYear} {settings.companyName}</Copyright>
             </div>
 
             <Menu>
